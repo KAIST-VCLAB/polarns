@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python align_metric.py --gt ../../PolarBurstSR/test --render ../../PolarBurstSR/pmfir_real --out_file_name output_s0
