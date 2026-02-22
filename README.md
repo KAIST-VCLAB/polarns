@@ -40,7 +40,7 @@ You can reproduce the figures and tables from the paper using the following scri
 
 # Polarization-trained Burst Super-Resolution (Python)
 We provide datasets for training and testing burst super-resolution on polarization images, along with polarization-adapted model implementations and pretrained checkpoints.
-### Download: [Dataset and Checkpoints (Google Drive)](https://drive.google.com/drive/folders/16z4gJCeky2frSAVkGZwxOEIVvqymqqbD?usp=drive_link)
+### Download: [Dataset and Checkpoints (Google Drive)](https://drive.google.com/drive/folders/11atH2PiqVoY6w_7dY69M5HUfVyBYvfLP?usp=sharing)
 
 ## Environment Setup
 Each model requires a specific environment due to differences in their original implementations. We recommend using the Docker images listed below:
