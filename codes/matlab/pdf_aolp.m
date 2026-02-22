@@ -1,0 +1,9 @@
+function probability = pdf_aolp(theta,ratio_polar_noise)
+
+probability = 1./(2.*pi) .* exp(-1 ./ 2 .* (ratio_polar_noise.^2)) ...
+    + ratio_polar_noise ./ (sqrt(2.*pi))  .* cos(theta) ...
+    .* exp(-1 ./ 2 .* (ratio_polar_noise.^2) .*(sin(theta).^2)) ...
+    .* normcdf(ratio_polar_noise.* cos(theta));
+
+end
+

@@ -1,0 +1,19 @@
+function [output] = demosaic_double(raw)
+output = zeros([size(raw),3]);
+output_denom = zeros([size(raw),3]);
+output(1:2:end,1:2:end,1) = raw(1:2:end,1:2:end);
+output(1:2:end,2:2:end,2) = raw(1:2:end,2:2:end);
+output(2:2:end,1:2:end,2) = raw(2:2:end,1:2:end);
+output(2:2:end,2:2:end,3) = raw(2:2:end,2:2:end);
+output_denom(1:2:end,1:2:end,1) = 1;
+output_denom(1:2:end,2:2:end,2) = 1;
+output_denom(2:2:end,1:2:end,2) = 1;
+output_denom(2:2:end,2:2:end,3) = 1;
+output(:,:,1) = conv2(output(:,:,1),[0.5 1 0.5]'*[0.5 1 0.5],"same");
+output(:,:,2) = conv2(output(:,:,2),[0 0.5 0;0.5 1 0.5;0,0.5,0],"same");
+output(:,:,3) = conv2(output(:,:,3),[0.5 1 0.5]'*[0.5 1 0.5],"same");
+output_denom(:,:,1) = conv2(output_denom(:,:,1),[0.5 1 0.5]'*[0.5 1 0.5],"same");
+output_denom(:,:,2) = conv2(output_denom(:,:,2),[0 0.5 0;0.5 1 0.5;0,0.5,0],"same");
+output_denom(:,:,3) = conv2(output_denom(:,:,3),[0.5 1 0.5]'*[0.5 1 0.5],"same");
+output = output./output_denom;
+end
